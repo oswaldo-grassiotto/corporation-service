@@ -1,1 +1,6 @@
 .idea
+target
+/corporation-service.iml
+/domain/*.iml
+/common/.editorconfig
+/common/common.iml
