@@ -21,6 +21,11 @@ class CorporationService(val repository: CorporationRepository) {
     }
 
     fun updateCorporation(corporationModel: UpdateCorporationRequestModel): Boolean{
+        val corporation = repository.fetchById(corporationModel.id)
+        if(corporation === null){
+            return false
+        }
+
         return repository.update(createCorporationEntity(corporationModel))
     }
 
