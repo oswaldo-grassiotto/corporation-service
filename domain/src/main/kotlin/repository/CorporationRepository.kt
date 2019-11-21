@@ -1,17 +1,17 @@
 package repository
 
-import entity.Corporation
+import entity.CorporationEntity
 
 interface CorporationRepository {
 
-    fun save(bean: Corporation): String
+    fun save(bean: CorporationEntity): String
 
-    fun update(value: Corporation) : Boolean
+    fun update(value: CorporationEntity) : Boolean
 
     fun remove(corporationId: String) : Boolean
 
-    fun fetchById(corporationId: String) : Corporation?
+    fun fetchById(corporationId: String) : CorporationEntity?
 
-    fun fetchByDocument(document: String) : Corporation?
+    fun fetchByDocument(document: String) : CorporationEntity?
 
 }
