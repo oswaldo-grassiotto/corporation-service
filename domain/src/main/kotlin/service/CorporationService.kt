@@ -28,7 +28,7 @@ class CorporationService(val repository: CorporationRepository) {
         return repository.remove(id);
     }
 
-    private fun createCorporationEntity(corporationModel: CreateCorporationRequestModel){
+    private fun createCorporationEntity(corporationModel: CreateCorporationRequestModel) : CorporationEntity {
         val corporationEntity = CorporationEntity(corporationModel.id,
             corporationModel.name,
             corporationModel.document,
@@ -37,9 +37,11 @@ class CorporationService(val repository: CorporationRepository) {
         corporationEntity.email = corporationModel.email
         corporationEntity.phone = corporationModel.phone
         corporationEntity.active = corporationModel.active
+
+        return corporationEntity
     }
 
-    private fun createCorporationEntity(corporationModel: UpdateCorporationRequestModel){
+    private fun createCorporationEntity(corporationModel: UpdateCorporationRequestModel) : CorporationEntity {
         val corporationEntity = CorporationEntity(corporationModel.id,
             corporationModel.name,
             corporationModel.document,
@@ -48,6 +50,8 @@ class CorporationService(val repository: CorporationRepository) {
         corporationEntity.email = corporationModel.email
         corporationEntity.phone = corporationModel.phone
         corporationEntity.active = corporationModel.active
+
+        return corporationEntity
     }
 
     private fun createCorporationResponseModel(corporationEntity: CorporationEntity?): CorporationResponseModel?{
